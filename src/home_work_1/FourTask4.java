@@ -9,9 +9,9 @@ public class FourTask4 {
     public static void main(String[] args) {
         String bytes = "b";
         String kByte = "k";
-        int amount = 1000;
+        int amount = 1024;
         int result;
-        System.out.println("Enter b(bytes) or k()KBytes");
+        System.out.println("Enter b(bytes) or k(KBytes)");
         Scanner scannerLetter = new Scanner(System.in);
         String bytesOrkBytes = scannerLetter.nextLine();
         System.out.println("Enter amount");
