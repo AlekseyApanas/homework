@@ -5,12 +5,16 @@ import java.util.Scanner;
 
 public class EightTask {
     public static void main(String[] args) {
+        byte number = getScanner();
+        String finalBinaryCode = toBinaryString(number);
+        System.out.println(finalBinaryCode);
+    }
+
+    public static byte getScanner() {
         System.out.println("Enter a number from -127 do 128");
         Scanner scanner = new Scanner(System.in);
         byte number = scanner.nextByte();
-        String finalBinaryCode = toBinaryString(number);
-        System.out.println(finalBinaryCode);
-
+        return number;
     }
 
     public static String toBinaryString(byte number) {
