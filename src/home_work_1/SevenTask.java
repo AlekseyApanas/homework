@@ -17,8 +17,8 @@ public class SevenTask {
     }
 
     public static String createPhoneNumber(int [] arrayPhoneNumber){
-        String numberPhone= Arrays.toString(arrayPhoneNumber).replaceAll("[|]","");
-        numberPhone=numberPhone.replaceAll("[|]","");
+        String numberPhone= Arrays.toString(arrayPhoneNumber);
+        /*numberPhone=numberPhone.replaceAll("[|]","");-не отрабатывает ,пришлось увеличить substring на 1 индекс*/
         numberPhone=numberPhone.replaceAll(", ","");
         String firstThreeElements=numberPhone.substring(1,4);
         String secondThreeElements=numberPhone.substring(4,7);
