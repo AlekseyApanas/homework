@@ -9,8 +9,8 @@ public class ForEachOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         ForEachOperation foreachOperation = new ForEachOperation();
-        IArraysOperation.allElementsForeach();
-        IArraysOperation.replaceElementsForeach();
-        IArraysOperation.deleteElementsForeach();
+        foreachOperation.allElementsForeach();
+        foreachOperation.replaceElementsForeach();
+        foreachOperation.deleteElementsForeach();
     }
 }

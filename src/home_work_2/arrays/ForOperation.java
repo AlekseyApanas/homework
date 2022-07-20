@@ -9,8 +9,8 @@ public class ForOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         ForOperation forOperation = new ForOperation();
-        IArraysOperation.allElementsFor();
-        IArraysOperation.replaceElementsFor();
-        IArraysOperation.deleteElementsFor();
+        forOperation.allElementsFor();
+        forOperation.replaceElementsFor();
+        forOperation.deleteElementsFor();
     }
 }

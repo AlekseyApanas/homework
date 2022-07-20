@@ -43,6 +43,7 @@ public class ArraysIteration {
 
     /**
      * taskSecond -выводит каждый второй элемент массива при помощи цикла do....while, while, for, foreach
+     *
      * @param arrayFromConsole-принимает массив введенный пользователем
      * @return
      */
@@ -77,14 +78,21 @@ public class ArraysIteration {
             }
         }
         System.out.println("Foreach");
-        for (int i : arrayFromConsole) {
-            System.out.println(i);
+        int[] arrayForeach = ArrayUtils.arrayFromConsole();
+        System.out.println("Foreach");
+        int count = 1;
+        for (int i : arrayForeach) {
+            if (count % 2 == 0) {
+                System.out.print(i + " ");
+            }
+            count++;
         }
         return 0;
     }
 
     /**
      * taskThird-выводит все элементы массива в обратном порядке
+     *
      * @param arrayFromConsole-принимает массив введенный пользователем
      * @return
      */

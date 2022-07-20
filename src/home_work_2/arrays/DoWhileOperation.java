@@ -9,9 +9,9 @@ public class DoWhileOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         DoWhileOperation doWhileOperation = new DoWhileOperation();
-        IArraysOperation.allElementsDoWhile();
-        IArraysOperation.replaceElementsDoWhile();
-        IArraysOperation.deleteElementsDoWhile();
+        doWhileOperation.allElementsDoWhile();
+        doWhileOperation.replaceElementsDoWhile();
+        doWhileOperation.deleteElementsDoWhile();
     }
 }
 

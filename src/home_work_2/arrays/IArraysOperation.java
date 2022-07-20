@@ -9,7 +9,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива при помощи цикла DoWhile
      */
-    public static void allElementsDoWhile() {
+    default void allElementsDoWhile() {
         int[] arrayDoWhileScanner = ArrayUtils.arrayFromConsole();
         int indexDoWhile = 0;
         System.out.println("Do while");
@@ -22,7 +22,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива при помощи цикла While
      */
-    public static void allElementsWhile() {
+    default void allElementsWhile() {
         int indexWhile = 0;
         int[] arrayWhileScanner = ArrayUtils.arrayFromConsole();
         System.out.println("While");
@@ -34,7 +34,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива при помощи цикла For
      */
-    public static void allElementsFor() {
+    default void allElementsFor() {
         int[] arrayFor = ArrayUtils.arrayFromConsole();
         System.out.println("For");
         for (int i = 0; i < arrayFor.length; i++) {
@@ -45,7 +45,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива при помощи цикла Foreach
      */
-    public static void allElementsForeach() {
+    default void allElementsForeach() {
         int[] arrayForeach = ArrayUtils.arrayFromConsole();
         System.out.println("Foreach");
         for (int numbersArrays : arrayForeach) {
@@ -56,7 +56,7 @@ public interface IArraysOperation {
     /**
      * Выводит каждый второй элемент массива при помощи цикла DoWhile
      */
-    public static void replaceElementsDoWhile() {
+    default void replaceElementsDoWhile() {
         int[] arrayDoWhile = ArrayUtils.arrayFromConsole();
         int indexDoWhile = arrayDoWhile.length - 1;
         System.out.println("Do while");
@@ -68,7 +68,7 @@ public interface IArraysOperation {
     /**
      * Выводит каждый второй элемент массива при помощи цикла While
      */
-    public static void replaceElementsWhile() {
+    default void replaceElementsWhile() {
         int[] arrayWhile = ArrayUtils.arrayFromConsole();
         int indexWhile = arrayWhile.length - 1;
         System.out.println("While");
@@ -80,7 +80,7 @@ public interface IArraysOperation {
     /**
      * Выводит каждый второй элемент массива при помощи цикла For
      */
-    public static void replaceElementsFor() {
+    default void replaceElementsFor() {
         int[] arrayFor = ArrayUtils.arrayFromConsole();
         System.out.println("For");
         for (int i = arrayFor.length - 1; i >= 0; i--) {
@@ -91,7 +91,7 @@ public interface IArraysOperation {
     /**
      * Выводит каждый второй элемент массива при помощи цикла Foreach
      */
-    public static void replaceElementsForeach() {
+    default void replaceElementsForeach() {
         int[] arrayForeach = ArrayUtils.arrayFromConsole();
         System.out.println("Foreach");
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -107,7 +107,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива в обратном порядке DoWhile
      */
-    public static void deleteElementsDoWhile() {
+    default void deleteElementsDoWhile() {
         int indexDoWhile = 0;
         System.out.println("Do while");
         int[] arrayDoWhile = ArrayUtils.arrayFromConsole();
@@ -123,7 +123,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива в обратном порядке While
      */
-    public static void deleteElementsWhile() {
+    default void deleteElementsWhile() {
         int indexWhile = 0;
         System.out.println("While");
         int[] arrayWhile = ArrayUtils.arrayFromConsole();
@@ -139,7 +139,7 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива в обратном порядке For
      */
-    public static void deleteElementsFor() {
+    default void deleteElementsFor() {
         int[] arrayFor = ArrayUtils.arrayFromConsole();
         System.out.println("For");
         for (int i = 1; i <= arrayFor.length; ) {
@@ -157,11 +157,15 @@ public interface IArraysOperation {
     /**
      * Выводит все элементы массива в обратном порядке Foreach
      */
-    public static void deleteElementsForeach() {
+    default void deleteElementsForeach() {
         int[] arrayForeach = ArrayUtils.arrayFromConsole();
         System.out.println("Foreach");
+        int count = 1;
         for (int i : arrayForeach) {
-            System.out.println(i);
+            if (count % 2 == 0) {
+                System.out.print(i + " ");
+            }
+            count++;
         }
     }
 }

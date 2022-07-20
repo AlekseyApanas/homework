@@ -9,8 +9,8 @@ public class WhileOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         WhileOperation whileOperation = new WhileOperation();
-        IArraysOperation.allElementsWhile();
-        IArraysOperation.replaceElementsWhile();
-        IArraysOperation.deleteElementsWhile();
+        whileOperation.allElementsWhile();
+        whileOperation.replaceElementsWhile();
+        whileOperation.deleteElementsWhile();
     }
 }
