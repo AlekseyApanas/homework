@@ -54,7 +54,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит каждый второй элемент массива при помощи цикла DoWhile
+     * Выводит все элементы массива в обратном порядке DoWhile
      */
     default void replaceElementsDoWhile() {
         int[] arrayDoWhile = ArrayUtils.arrayFromConsole();
@@ -66,7 +66,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит каждый второй элемент массива при помощи цикла While
+     * Выводит все элементы массива в обратном порядке While
      */
     default void replaceElementsWhile() {
         int[] arrayWhile = ArrayUtils.arrayFromConsole();
@@ -78,7 +78,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит каждый второй элемент массива при помощи цикла For
+     * Выводит все элементы массива в обратном порядке Foreach For
      */
     default void replaceElementsFor() {
         int[] arrayFor = ArrayUtils.arrayFromConsole();
@@ -89,7 +89,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит каждый второй элемент массива при помощи цикла Foreach
+     * Выводит все элементы массива в обратном порядке Foreach Foreach
      */
     default void replaceElementsForeach() {
         int[] arrayForeach = ArrayUtils.arrayFromConsole();
@@ -105,7 +105,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит все элементы массива в обратном порядке DoWhile
+     * Выводит каждый второй элемент массива при помощи цикла DoWhile
      */
     default void deleteElementsDoWhile() {
         int indexDoWhile = 0;
@@ -121,7 +121,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит все элементы массива в обратном порядке While
+     * Выводит каждый второй элемент массива при помощи цикла While
      */
     default void deleteElementsWhile() {
         int indexWhile = 0;
@@ -137,7 +137,7 @@ public interface IArraysOperation {
     }
 
     /**
-     * Выводит все элементы массива в обратном порядке For
+     * Выводит каждый второй элемент массива при помощи цикла For
      */
     default void deleteElementsFor() {
         int[] arrayFor = ArrayUtils.arrayFromConsole();
@@ -147,22 +147,21 @@ public interface IArraysOperation {
                 System.out.println(arrayFor[i]);
                 break;
             } else {
-                System.out.println(arrayFor
-                        [i]);
+                System.out.println(arrayFor[i]);
                 i = i + 2;
             }
         }
     }
 
     /**
-     * Выводит все элементы массива в обратном порядке Foreach
+     * Выводит каждый второй элемент массива при помощи цикла Foreach
      */
     default void deleteElementsForeach() {
         int[] arrayForeach = ArrayUtils.arrayFromConsole();
         System.out.println("Foreach");
         int count = 1;
         for (int i : arrayForeach) {
-            if (count % 2 == 0) {
+            if (count % 2 != 0) {
                 System.out.print(i + " ");
             }
             count++;
