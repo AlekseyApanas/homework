@@ -82,7 +82,7 @@ public class ArraysIteration {
         System.out.println("Foreach");
         int count = 1;
         for (int i : arrayForeach) {
-            if (count % 2 == 0) {
+            if (count % 2 != 0) {
                 System.out.print(i + " ");
             }
             count++;
