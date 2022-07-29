@@ -13,7 +13,23 @@ public class CalculatorDecoratorMain {
         double resultExponentiation = iCalculator.exponentiation(resultDivision, 2);
         double resultAdd = iCalculator.addition(4.1, resultMultiplication);
         double result = iCalculator.addition(resultAdd, resultExponentiation);
+
+        CalculatorWithCounterAutoDecorator calculatorWithCounterAutoDecorator = null;
+        if (iCalculator instanceof CalculatorWithCounterAutoDecorator) {
+            calculatorWithCounterAutoDecorator =(CalculatorWithCounterAutoDecorator) iCalculator;
+        } else {
+            return;
+        }
+        CalculatorWithMemoryDecorator calculatorWithMemoryDecorator = null;
+        if (calculatorWithCounterAutoDecorator.getCalculator() instanceof CalculatorWithMemoryDecorator) {
+            calculatorWithMemoryDecorator = (CalculatorWithMemoryDecorator)calculatorWithCounterAutoDecorator.getCalculator();
+        } else {
+            return;
+        }
         System.out.println(result);
         System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getCountOperation() - 1);
+        /*calculatorWithMemoryDecorator.setMemory(result);*/
+        System.out.println(calculatorWithMemoryDecorator.getMemory());
+
     }
 }

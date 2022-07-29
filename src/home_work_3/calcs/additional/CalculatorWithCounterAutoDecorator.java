@@ -5,7 +5,7 @@ import home_work_3.calcs.api.ICalculator;
 public class CalculatorWithCounterAutoDecorator implements ICalculator {
     private int counter;
     private double lastOperationTwo;
-    CalculatorWithMemoryDecorator calculatorTwo;
+   private CalculatorWithMemoryDecorator calculatorTwo;
 
     /**
      * Счётчик ,который считает кол-во выполнений
@@ -83,7 +83,8 @@ public class CalculatorWithCounterAutoDecorator implements ICalculator {
         return lastOperationTwo;
     }
 
-    ICalculator getCalculator(CalculatorWithCounterAutoDecorator calculatorMemoryTwo) {
-        return calculatorMemoryTwo;
+    public ICalculator getCalculator() {
+        return calculatorTwo;
     }
+
 }

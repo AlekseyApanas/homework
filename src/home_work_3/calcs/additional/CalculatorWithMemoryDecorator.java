@@ -4,8 +4,9 @@ import home_work_3.calcs.api.ICalculator;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithMemoryDecorator implements ICalculator {
+    private double memory;
     private double lastOperationOne;
-    ICalculator calculatorOne;
+    private ICalculator calculatorOne;
 
     /**
      * Конструктор принимающий объект типа ICalculator
@@ -59,7 +60,29 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
         return lastOperationOne;
     }
 
-    ICalculator getCalculator(ICalculator calculatorMemoryOne) {
-        return calculatorMemoryOne;
+   public ICalculator getCalculator() {
+        return calculatorOne;
+    }
+    /**
+     * Перезаписываем число
+     */
+    public void clearMemory() {
+        memory = 0;
+    }
+
+    /**
+     * Устанавливаем значение последней операции
+     * @param lastOperationOne
+     */
+    public void setMemory(double lastOperationOne) {
+        memory = lastOperationOne;
+    }
+
+    /**
+     * Вовращаем реультат последней операции
+     * @return
+     */
+    public double getMemory() {
+        return memory;
     }
 }
