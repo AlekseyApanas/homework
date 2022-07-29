@@ -12,9 +12,8 @@ public class CalculatorDecoratorMain {
         double resultDivision = iCalculator.division(28, 5);
         double resultExponentiation = iCalculator.exponentiation(resultDivision, 2);
         double resultAdd = iCalculator.addition(4.1, resultMultiplication);
-        double result= iCalculator.addition(resultAdd, resultExponentiation);
+        double result = iCalculator.addition(resultAdd, resultExponentiation);
         System.out.println(result);
         System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getCountOperation() - 1);
-//        System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getFunctionsMemory - 1);
     }
 }
