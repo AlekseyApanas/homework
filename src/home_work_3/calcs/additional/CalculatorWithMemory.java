@@ -4,7 +4,7 @@ import home_work_3.calcs.api.ICalculator;
 
 public class CalculatorWithMemory implements ICalculator {
     private double lastOperation;
-    private double resultLastOperation;
+    private double memory;
     private long counter;
     public ICalculator iCalculator;
     /**
@@ -85,13 +85,26 @@ public class CalculatorWithMemory implements ICalculator {
     }
 
     /**
-     * Добвили функцию,которая фозвращает результат последнего метода
-     *
-     * @return- возвращает результат последней операции
+     * Перезаписываем число
      */
-    public double getfunctionsMemory(double lastOperation) {
-        resultLastOperation = 0;
-
-        return resultLastOperation;
+    public void clearMemory() {
+        memory = 0;
     }
+
+    /**
+     * Устанавливаем значение последней операции
+     * @param lastOperation
+     */
+    public void setMemory(double lastOperation) {
+        memory = lastOperation;
+    }
+
+    /**
+     * Вовращаем реультат последней операции
+     * @return
+     */
+    public double getMemory() {
+        return memory;
+    }
+
 }

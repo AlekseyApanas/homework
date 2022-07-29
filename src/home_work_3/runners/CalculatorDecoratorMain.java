@@ -15,6 +15,6 @@ public class CalculatorDecoratorMain {
         double result= iCalculator.addition(resultAdd, resultExponentiation);
         System.out.println(result);
         System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getCountOperation() - 1);
-
+//        System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getFunctionsMemory - 1);
     }
 }

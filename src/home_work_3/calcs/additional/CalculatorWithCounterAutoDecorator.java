@@ -45,7 +45,6 @@ public class CalculatorWithCounterAutoDecorator implements ICalculator {
     public double subtraction(double firstNumber, double secondNumber) {
         incrementCountOperation();
         lastOperationTwo = calculatorTwo.subtraction(firstNumber, secondNumber);
-        ;
         return lastOperationTwo;
     }
 
@@ -85,8 +84,6 @@ public class CalculatorWithCounterAutoDecorator implements ICalculator {
     }
 
     ICalculator getCalculator(CalculatorWithCounterAutoDecorator calculatorMemoryTwo) {
-
-
         return calculatorMemoryTwo;
     }
 }

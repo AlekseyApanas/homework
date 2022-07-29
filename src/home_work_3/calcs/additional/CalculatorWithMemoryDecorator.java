@@ -55,12 +55,11 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
 
     @Override
     public double squareRoot(double firstNumber) {
-        calculatorOne.squareRoot(firstNumber);
+        lastOperationOne=calculatorOne.squareRoot(firstNumber);
         return lastOperationOne;
     }
 
     ICalculator getCalculator(ICalculator calculatorMemoryOne) {
-
         return calculatorMemoryOne;
     }
 }

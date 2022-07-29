@@ -15,7 +15,8 @@ public class CalculatorWithMemoryMain {
         double resultAdd = calculatorWithMemory.addition(4.1, resultMultiplication);
         double result = calculatorWithMemory.addition(resultAdd, resultExponentiation);
         System.out.println(result);
-        System.out.println(calculatorWithMemory.getfunctionsMemory(result));
+        /*calculatorWithMemory.setMemory(result);*/
+        System.out.println(calculatorWithMemory.getMemory());
         System.out.println(calculatorWithMemory.getCountOperation()-1);
     }
 }
