@@ -23,5 +23,9 @@
 Задание 13 - calcs.additional.CalculatorWithCounterAutoDecorator
              calcs.additional.CalculatorWithMemoryDecorator
             runners.CalculatorDecoratorMain
+<<<<<<< HEAD
 
             
+=======
+            
+>>>>>>> b75825daa83ab57163c8cf935ad6d9a95c190f9b
