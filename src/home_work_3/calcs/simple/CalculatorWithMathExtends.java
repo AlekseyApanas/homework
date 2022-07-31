@@ -5,25 +5,22 @@ import home_work_3.calcs.api.ICalculator;
 public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalculator {
     /**
      * переопределяем методы из класса CalculatorWithOperator
-     * @param firstNumber
-     * @param secondNumber
-     * @return
+     * @param firstNumber аргумент первого числа
+     * @param secondNumber аргумент второго числа
+     * @return возвращает результат метода
      */
     @Override
     public double exponentiation(double firstNumber, int secondNumber) {
-        double result = Math.pow(firstNumber, secondNumber);
-        return result;
+        return Math.pow(firstNumber, secondNumber);
     }
 
     @Override
     public double module(double firstNumber) {
-        double result = Math.abs(firstNumber);
-        return result;
+        return Math.abs(firstNumber);
     }
 
     @Override
     public double squareRoot(double firstNumber) {
-        double result = Math.sqrt(firstNumber);
-        return result;
+        return Math.sqrt(firstNumber);
     }
 }

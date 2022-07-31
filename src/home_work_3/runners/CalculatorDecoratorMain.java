@@ -14,20 +14,20 @@ public class CalculatorDecoratorMain {
         double resultAdd = iCalculator.addition(4.1, resultMultiplication);
         double result = iCalculator.addition(resultAdd, resultExponentiation);
 
-        CalculatorWithCounterAutoDecorator calculatorWithCounterAutoDecorator = null;
+        CalculatorWithCounterAutoDecorator calculatorWithCounterAutoDecorator;
         if (iCalculator instanceof CalculatorWithCounterAutoDecorator) {
             calculatorWithCounterAutoDecorator =(CalculatorWithCounterAutoDecorator) iCalculator;
         } else {
             return;
         }
-        CalculatorWithMemoryDecorator calculatorWithMemoryDecorator = null;
+        CalculatorWithMemoryDecorator calculatorWithMemoryDecorator ;
         if (calculatorWithCounterAutoDecorator.getCalculator() instanceof CalculatorWithMemoryDecorator) {
             calculatorWithMemoryDecorator = (CalculatorWithMemoryDecorator)calculatorWithCounterAutoDecorator.getCalculator();
         } else {
             return;
         }
         System.out.println(result);
-        System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getCountOperation() - 1);
+        System.out.println(((CalculatorWithCounterAutoDecorator) iCalculator).getCountOperation());
         /*calculatorWithMemoryDecorator.setMemory(result);*/
         System.out.println(calculatorWithMemoryDecorator.getMemory());
 

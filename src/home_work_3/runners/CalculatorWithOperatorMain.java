@@ -5,7 +5,6 @@ import home_work_3.calcs.simple.CalculatorWithOperator;
 public class CalculatorWithOperatorMain {
     /**
      * Выводит результат используя методы из класса calculatorWithOperator
-     * @param args
      */
     public static void main(String[] args) {
         CalculatorWithOperator calculatorWithOperator=new CalculatorWithOperator();

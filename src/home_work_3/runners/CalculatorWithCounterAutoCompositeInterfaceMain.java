@@ -5,7 +5,7 @@ import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoCompositeInterfaceMain {
     public static void main(String[] args) {
-        /**
+        /*
          * Выводит результат используя объект класса calculatorWithCounterAutoAgregationInterface и добавили автоматический счётчик
          */
         CalculatorWithCounterAutoAgregationInterface calculatorWithCounterAutoAgregationInterface=new CalculatorWithCounterAutoAgregationInterface(new CalculatorWithOperator());
@@ -15,6 +15,6 @@ public class CalculatorWithCounterAutoCompositeInterfaceMain {
         double resultAdd = calculatorWithCounterAutoAgregationInterface.addition(4.1, resultMultiplication);
         double result= calculatorWithCounterAutoAgregationInterface.addition(resultAdd, resultExponentiation);
         System.out.println(result);
-        System.out.println(calculatorWithCounterAutoAgregationInterface.getCountOperation() - 1);
+        System.out.println(calculatorWithCounterAutoAgregationInterface.getCountOperation());
     }
 }

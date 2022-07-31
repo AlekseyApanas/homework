@@ -6,7 +6,6 @@ public class WithoutCalculatorMain {
     }
     public static double result(){
         double degree=28/5D;
-        double result=(double) 4.1+15*7+Math.pow(degree,2);
-        return result;
+        return 4.1+15*7+Math.pow(degree,2);
     }
 }

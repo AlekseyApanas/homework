@@ -1,7 +1,7 @@
 package home_work_3.calcs.additional;
 
 import home_work_3.calcs.api.ICalculator;
-import home_work_3.calcs.simple.CalculatorWithOperator;
+
 
 public class CalculatorWithCounterAutoAgregationInterface implements ICalculator {
     private long counter;
@@ -10,7 +10,6 @@ public class CalculatorWithCounterAutoAgregationInterface implements ICalculator
     /**
      * Конструктор принимающий объект типа ICalculator
      *
-     * @param calculator
      */
     public CalculatorWithCounterAutoAgregationInterface(ICalculator calculator) {
         this.calculator = calculator;
@@ -19,17 +18,16 @@ public class CalculatorWithCounterAutoAgregationInterface implements ICalculator
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+    public void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
     public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
 

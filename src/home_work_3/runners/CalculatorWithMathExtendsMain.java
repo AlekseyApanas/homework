@@ -5,7 +5,6 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 public class CalculatorWithMathExtendsMain {
     /**
      * Выводит результат используя объект класса calculatorWithMathExtends и переопределение метода
-     * @param args
      */
     public static void main(String[] args) {
         CalculatorWithMathExtends calculatorWithMathExtends = new CalculatorWithMathExtends();

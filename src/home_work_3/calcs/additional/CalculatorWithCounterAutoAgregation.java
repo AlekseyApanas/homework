@@ -3,7 +3,7 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoAgregation {
-    private CalculatorWithOperator calculator;
+    private final CalculatorWithOperator calculator;
 
     /**
      * Конструктор используется для инициализации поля
@@ -53,17 +53,16 @@ public class CalculatorWithCounterAutoAgregation {
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+   private void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
    public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
 }

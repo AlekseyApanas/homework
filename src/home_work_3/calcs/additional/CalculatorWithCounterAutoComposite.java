@@ -1,19 +1,17 @@
 package home_work_3.calcs.additional;
 
-import home_work_3.calcs.simple.CalculatorWithMathCopy;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 
 public class CalculatorWithCounterAutoComposite {
 
-    private CalculatorWithOperator calculator;
+    private final CalculatorWithOperator calculator;
 
     /**
      * Конструктор в котором инициальзируется поле обьектом калькулятора с помощью new
      */
     public CalculatorWithCounterAutoComposite() {
         calculator = new CalculatorWithOperator();
-        this.calculator = calculator;
     }
 
     /**
@@ -59,17 +57,16 @@ public class CalculatorWithCounterAutoComposite {
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+    private void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
    public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
 }

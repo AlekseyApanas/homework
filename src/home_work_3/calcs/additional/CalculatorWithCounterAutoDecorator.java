@@ -5,22 +5,21 @@ import home_work_3.calcs.api.ICalculator;
 public class CalculatorWithCounterAutoDecorator implements ICalculator {
     private int counter;
     private double lastOperationTwo;
-   private CalculatorWithMemoryDecorator calculatorTwo;
+    private final CalculatorWithMemoryDecorator calculatorTwo;
 
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+    private void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return - возвращает кол-во выполнений калькулятора
      */
     public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
 

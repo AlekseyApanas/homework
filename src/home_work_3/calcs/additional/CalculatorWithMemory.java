@@ -6,27 +6,25 @@ public class CalculatorWithMemory implements ICalculator {
     private double lastOperation;
     private double memory;
     private long counter;
-    public ICalculator iCalculator;
+   private final ICalculator iCalculator;
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+   private void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
     public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
     /**
      * Конструктор,который возвращает ссылку на объект интерфейса
      *
-     * @param iCalculator
      */
     public CalculatorWithMemory(ICalculator iCalculator) {
         this.iCalculator = iCalculator;
@@ -93,7 +91,6 @@ public class CalculatorWithMemory implements ICalculator {
 
     /**
      * Устанавливаем значение последней операции
-     * @param lastOperation
      */
     public void setMemory(double lastOperation) {
         memory = lastOperation;
@@ -101,7 +98,7 @@ public class CalculatorWithMemory implements ICalculator {
 
     /**
      * Вовращаем реультат последней операции
-     * @return
+     * @return возвращает значение последней операции
      */
     public double getMemory() {
         return memory;

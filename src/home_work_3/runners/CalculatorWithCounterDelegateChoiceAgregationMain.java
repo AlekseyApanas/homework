@@ -9,8 +9,8 @@ public class CalculatorWithCounterDelegateChoiceAgregationMain {
     public static void main(String[] args) {
         CalculatorWithCounterAutoChoiceAgregation calculatorWithCounterAutoChoiceAgregation1 = new CalculatorWithCounterAutoChoiceAgregation(new CalculatorWithOperator());
         CalculatorWithCounterAutoChoiceAgregation calculatorWithCounterAutoChoiceAgregation2 = new CalculatorWithCounterAutoChoiceAgregation(new CalculatorWithMathCopy());
-        CalculatorWithCounterAutoChoiceAgregation calculatorWithCounterAutoChoiceAgregation3= new CalculatorWithCounterAutoChoiceAgregation(new CalculatorWithMathExtends());
-        /**
+        CalculatorWithCounterAutoChoiceAgregation calculatorWithCounterAutoChoiceAgregation3 = new CalculatorWithCounterAutoChoiceAgregation(new CalculatorWithMathExtends());
+        /*
          * Выводит результат используя объект класса calculatorWithCounterAutoComposite и добавили автоматический счётчик
          *CalculatorWithOperator
          */
@@ -20,8 +20,8 @@ public class CalculatorWithCounterDelegateChoiceAgregationMain {
         double resultAddFirst = calculatorWithCounterAutoChoiceAgregation1.calculatorAddition(4.1, resultMultiplicationFirst);
         double resultFirst = calculatorWithCounterAutoChoiceAgregation1.calculatorAddition(resultAddFirst, resultExponentiationFirst);
         System.out.println(resultFirst);
-        System.out.println(calculatorWithCounterAutoChoiceAgregation1.getCountOperation() - 1);
-        /**
+        System.out.println(calculatorWithCounterAutoChoiceAgregation1.getCountOperation());
+        /*
          * Выводит результат используя объект класса calculatorWithCounterAutoComposite и добавили автоматический счётчик
          * CalculatorWithMathCopy
          */
@@ -31,8 +31,8 @@ public class CalculatorWithCounterDelegateChoiceAgregationMain {
         double resultAddSecond = calculatorWithCounterAutoChoiceAgregation2.calculatorAddition(4.1, resultMultiplicationSecond);
         double resultSecond = calculatorWithCounterAutoChoiceAgregation2.calculatorAddition(resultAddSecond, resultExponentiationSecond);
         System.out.println(resultSecond);
-        System.out.println(calculatorWithCounterAutoChoiceAgregation2.getCountOperation() - 1);
-        /**
+        System.out.println(calculatorWithCounterAutoChoiceAgregation2.getCountOperation());
+        /*
          * Выводит результат используя объект класса calculatorWithCounterAutoComposite и добавили автоматический счётчик
          *CalculatorWithMathExtends
          */
@@ -42,6 +42,6 @@ public class CalculatorWithCounterDelegateChoiceAgregationMain {
         double resultAddThree = calculatorWithCounterAutoChoiceAgregation3.calculatorAddition(4.1, resultMultiplicationThree);
         double resultThree = calculatorWithCounterAutoChoiceAgregation3.calculatorAddition(resultAddThree, resultExponentiationThree);
         System.out.println(resultThree);
-        System.out.println(calculatorWithCounterAutoChoiceAgregation3.getCountOperation() - 1);
+        System.out.println(calculatorWithCounterAutoChoiceAgregation3.getCountOperation());
     }
 }

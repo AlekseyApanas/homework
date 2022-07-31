@@ -131,17 +131,16 @@ public class CalculatorWithCounterAutoChoiceAgregation {
     /**
      * Счётчик ,который считает кол-во выполнений калькулятора
      */
-    void incrementCountOperation() {
+   private void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений  калькулятора
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
    public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
 }

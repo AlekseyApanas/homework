@@ -11,17 +11,16 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+   public void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
     public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
 }

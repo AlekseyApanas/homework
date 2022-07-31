@@ -3,7 +3,7 @@ package home_work_3.runners;
 import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
 public class CalculatorWithMathCopyMain {
-    /**
+    /*
      * Выводит результат используя методы из класса calculatorWithMathCopy
      * @param args
      */

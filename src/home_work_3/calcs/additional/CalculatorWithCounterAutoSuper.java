@@ -11,24 +11,23 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     /**
      * Счётчик ,который считает кол-во выполнений
      */
-    void incrementCountOperation() {
+    private void incrementCountOperation() {
         counter++;
     }
 
     /**
      * метод который возвращает кол-во выполнений
      *
-     * @return
+     * @return возвращает кол-во выполнений калькулятора
      */
    public long getCountOperation() {
-        incrementCountOperation();
         return counter;
     }
     /**
      * Переопределили метод и добавили счётчик
-     * @param firstNumber
-     * @param secondNumber
-     * @return
+     * @param firstNumber аргумент первого числа
+     * @param secondNumber аргумент второго числа
+     * @return возвращает родительский метод
      */
     @Override
     public double exponentiation(double firstNumber, int secondNumber) {

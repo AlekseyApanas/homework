@@ -4,7 +4,7 @@ import home_work_3.calcs.additional.CalculatorWithCounterAutoComposite;
 
 public class CalculatorWithCounterDelegateCompositeMain {
     public static void main(String[] args) {
-        /**
+        /*
          * Выводит результат используя объект класса calculatorWithCounterAutoComposite и добавили автоматический счётчик,который вернули через метод get
          */
         CalculatorWithCounterAutoComposite calculatorWithCounterAutoComposite = new CalculatorWithCounterAutoComposite();
@@ -14,6 +14,6 @@ public class CalculatorWithCounterDelegateCompositeMain {
         double resultAdd = calculatorWithCounterAutoComposite.calculatorAddition(4.1, resultMultiplication);
         double result = calculatorWithCounterAutoComposite.calculatorAddition(resultAdd, resultExponentiation);
         System.out.println(result);
-        System.out.println(calculatorWithCounterAutoComposite.getCountOperation()-1);
+        System.out.println(calculatorWithCounterAutoComposite.getCountOperation());
     }
 }

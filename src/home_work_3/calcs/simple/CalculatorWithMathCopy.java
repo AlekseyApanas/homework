@@ -7,76 +7,69 @@ public class CalculatorWithMathCopy implements ICalculator {
      * Задание 3.2.1.4
      * Метод сложения
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double addition(double firstNumber, double secondNumber) {
-        double result = firstNumber + secondNumber;
-        return result;
+        return firstNumber + secondNumber;
     }
 
     /**
      * Задание 3.2.1.4
      * Метод вычитания
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double subtraction(double firstNumber, double secondNumber) {
-        double result = firstNumber - secondNumber;
-        return result;
+        return firstNumber - secondNumber;
     }
 
     /**
      * Задание 3.2.1.4
      * Метод умножения
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double multiplication(double firstNumber, double secondNumber) {
-        double result = firstNumber * secondNumber;
-        return result;
+        return firstNumber*secondNumber;
     }
 
     /**
      * Задание 3.2.1.4
      * Метод деления
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double division(double firstNumber, double secondNumber) {
-        double result = firstNumber / secondNumber;
-        return result;
+        return firstNumber/secondNumber;
     }
 
     /**
      * Задание 3.2.2.3
      * Метод возведения в степень
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double exponentiation(double firstNumber, int secondNumber) {
-        double result=Math.pow(firstNumber,secondNumber);
-        return result;
+        return Math.pow(firstNumber,secondNumber);
     }
 
     /**
      * Задание 3.2.2.3
      * Метод модуль числа
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double module(double firstNumber) {
-        double result=Math.abs(firstNumber);
-        return result;
+        return Math.abs(firstNumber);
     }
 
     /**
      * Задание 3.2.2.3
      * Метод квадратный корень числа
      *
-     * @return
+     * @return возвращает резулятат метода
      */
     public double squareRoot(double firstNumber) {
-        double result = Math.sqrt(firstNumber);
-        return result;
+        return Math.sqrt(firstNumber);
     }
 }

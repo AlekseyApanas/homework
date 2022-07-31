@@ -5,7 +5,7 @@ import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithMemoryMain {
     public static void main(String[] args) {
-        /**
+        /*
          * Выводит результат используя объект класса calculatorWithMemory
          */
         CalculatorWithMemory calculatorWithMemory = new CalculatorWithMemory(new CalculatorWithOperator());
@@ -17,6 +17,6 @@ public class CalculatorWithMemoryMain {
         System.out.println(result);
         /*calculatorWithMemory.setMemory(result);*/
         System.out.println(calculatorWithMemory.getMemory());
-        System.out.println(calculatorWithMemory.getCountOperation()-1);
+        System.out.println(calculatorWithMemory.getCountOperation());
     }
 }

@@ -13,8 +13,7 @@ public class EightTask {
     public static byte getScanner() {
         System.out.println("Enter a number from -127 do 128");
         Scanner scanner = new Scanner(System.in);
-        byte number = scanner.nextByte();
-        return number;
+        return scanner.nextByte();
     }
 
     public static String toBinaryString(byte number) {
