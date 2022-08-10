@@ -104,7 +104,7 @@ public class DataContainer<T> implements Iterable<T> {
      * @param comparator переданный аргумент объекта класса ComparatorContainerString
      */
     public void sort(Comparator<T> comparator) {
-        for (int i = 0; i < data.length - 1; i++) {
+        for (int i = 0; i < data.length; i++) {
             for (int j = data.length - 1; j > i; j--) {
                 if (data[i] != null && data[j] != null) {
                     if (comparator.compare(data[i], data[j]) > 0) {
@@ -141,7 +141,7 @@ public class DataContainer<T> implements Iterable<T> {
      */
     public static <T extends Comparable<T>> void sort(DataContainer<T> container) {
         T[] array = container.getItems();
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length; i++) {
             for (int j = array.length - 1; j > i; j--) {
                 if (array[i] != null && array[j] != null) {
                     if (array[i].compareTo((array[j])) > 0) {
@@ -163,7 +163,7 @@ public class DataContainer<T> implements Iterable<T> {
      */
     public static <T> void sort(DataContainer<T> container, Comparator<T> comparator) {
         T[] array = container.getItems();
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length; i++) {
             for (int j = array.length - 1; j > i; j--) {
                 if (array[i] != null && array[j] != null) {
                     if (comparator.compare(array[i], array[j]) > 0) {
