@@ -1,6 +1,6 @@
 package home_work_5.comporator;
 
-import home_work_5.Animal;
+import home_work_5.classDTO.Animal;
 
 
 import java.util.Comparator;

@@ -1,6 +1,7 @@
-package home_work_5.CreatCollection;
+package home_work_5.creatCollection;
 
-import home_work_5.Generation.GenerationPersonAndAnimal;
+import home_work_5.comporator.ComparatorNickAnimal;
+import home_work_5.generation.GenerationPersonAndAnimal;
 import home_work_5.comporator.ComparatorPasswordLength;
 
 import java.io.IOException;
@@ -19,12 +20,28 @@ public class CreateTreeSet<T> {
     public Set<T> addPerson() throws IOException {
         long start = currentTimeMillis();
         Set<T> list = new TreeSet<>((Comparator<? super T>) new ComparatorPasswordLength());
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100_000; i++) {
             GenerationPersonAndAnimal generationPersonAndAnimal = new GenerationPersonAndAnimal();
             list.add((T) generationPersonAndAnimal.getPerson());
         }
         long stop = currentTimeMillis();
         System.out.println("TreeSet заполнен Person за " + (stop - start)+" мс");
+        return list;
+    }
+    /**
+     * Заполняем TreeSet Animal и считаем время заполнения
+     *
+     * @return заполненный TreeSet
+     */
+    public Set<T> addAnimal(){
+        long start = currentTimeMillis();
+        Set<T> list = new TreeSet<>((Comparator<? super T>) new ComparatorNickAnimal());
+        for (int i = 0; i < 100_000; i++) {
+            GenerationPersonAndAnimal generationPersonAndAnimal = new GenerationPersonAndAnimal();
+            list.add((T) generationPersonAndAnimal.getAnimal());
+        }
+        long stop = currentTimeMillis();
+        System.out.println("TreeSet заполнен Animal за " + (stop - start)+" мс");
         return list;
     }
 }

@@ -1,4 +1,4 @@
-package home_work_5;
+package home_work_5.classDTO;
 
 public class Animal {
     private final int age;

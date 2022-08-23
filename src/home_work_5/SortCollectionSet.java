@@ -1,5 +1,7 @@
 package home_work_5;
 
+import home_work_5.classDTO.Animal;
+import home_work_5.classDTO.Person;
 import home_work_5.comporator.ComparatorAgeAnimal;
 import home_work_5.comporator.ComparatorPasswordLength;
 

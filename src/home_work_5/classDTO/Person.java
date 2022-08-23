@@ -1,4 +1,4 @@
-package home_work_5;
+package home_work_5.classDTO;
 
 public class Person {
     private final StringBuilder nick;

@@ -1,9 +1,11 @@
 package home_work_5;
 
-import home_work_5.сreatCollection.CreateArrayList;
-import home_work_5.сreatCollection.CreateHashSet;
-import home_work_5.сreatCollection.CreateLinkedList;
-import home_work_5.сreatCollection.CreateTreeSet;
+import home_work_5.classDTO.Animal;
+import home_work_5.classDTO.Person;
+import home_work_5.creatCollection.CreateArrayList;
+import home_work_5.creatCollection.CreateHashSet;
+import home_work_5.creatCollection.CreateLinkedList;
+import home_work_5.creatCollection.CreateTreeSet;
 import home_work_5.comporator.ComparatorAgeAnimal;
 import home_work_5.comporator.ComparatorNickAnimal;
 import home_work_5.comporator.ComparatorNickPerson;
