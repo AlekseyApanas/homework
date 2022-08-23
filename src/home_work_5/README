@@ -1,0 +1,14 @@
+Задание 1.1 - класс Person,класс RandomPassword;
+Задание 1.2 - класс Animal,класс RandomAge;
+Задание 2 - generation/GenerationName;
+Задание 3 - generation/GenerationNickAnimal;
+Задание 4 - generation/GenerationNickPerson;
+Задание 5.1 - comparator/ComparatorPasswordLength;
+Задание 5.2 - comparator/ComparatorPasswordLength+ComparatorNickPerson+(реализация Main);
+Задание 5.3 - comparator/ComparatorAge;
+Задание 5.4 - comparator/ComparatorAge+ComparatorNickAnimal+(реализация Main);
+Задание 6.1,6.2-createCollection/createArrayList,CreateLinkedList,CreateHashSet,CreateTreeSet 
+Задание 6.3 - Main,SortCollectionSet;
+Задание 6.4 - IteratorTime;
+GinI - интерфейс;
+GenerationPersonAndAnimal - генерация Person и Animal;
