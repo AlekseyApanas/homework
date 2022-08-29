@@ -1,74 +1,38 @@
-package home_work_5;
+package home_work_5.sort;
 
-import home_work_5.classDTO.Animal;
 import home_work_5.classDTO.Person;
-import home_work_5.comporator.ComparatorAgeAnimal;
 import home_work_5.comporator.ComparatorPasswordLength;
 
 import java.util.*;
 
-public class SortCollectionSet<T> {
+public class SortCollectionPerson {
     /**
-     * Метод сортирует коллекцию HashSet и TreeSet
+     * Метод сортирует коллекцию
      *
      * @param collection принемает коллекцию
-     * @return отсортированная коллекция
      */
-    public Set<T> getPersonSortHashSetAndTreeSet(Set<T> collection) {
-        List<T> collectionList = new ArrayList<>(collection);
-        collectionList.sort((Comparator<? super T>) new ComparatorPasswordLength());
-        return new HashSet<>(collectionList);
+    public void getPersonSort(Collection<Person> collection) {
+        List<Person> collectionList = new ArrayList<>(collection);
+        collectionList.sort(new ComparatorPasswordLength());
     }
 
     /**
-     * Метод сортирует коллекцию HashSet и TreeSet
-     *
-     * @param collection принемает коллекцию
-     * @return отсортированная коллекция
-     */
-    public Set<T> getAnimalSortHashSetAndTreeSet(Set<T> collection) {
-        List<T> collectionList = new ArrayList<>(collection);
-        collectionList.sort((Comparator<? super T>) new ComparatorAgeAnimal());
-        return new HashSet<>(collectionList);
-    }
-    /**
      * Метод сортирует коллекцию Person
      *
      * @param collection принемает коллекцию
-     * @return отсортированная коллекция
      */
-    public List<Person> getMySortPerson(List<Person> collection) {
+    public void getMySortPerson(Collection<Person> collection) {
+        List<Person> collectionList = new ArrayList<>(collection);
         List<Person> x = new ArrayList<>();
         for (int i = 0; i < collection.size(); i++) {
-            for (int j = collection.size()-1; j > i; j--) {
-                if (collection.get(i).getPassword().length() > collection.get(j).getPassword().length()) {
-                    x.add(collection.get(j));
-                    x.set(x.size()-1,collection.get(i));
-                    collection.set(j, collection.get(i));
-                    collection.set(i, x.get(x.size()-1));
+            for (int j = collection.size() - 1; j > i; j--) {
+                if (collectionList.get(i).getPassword().length() > collectionList.get(j).getPassword().length()) {
+                    x.add(collectionList.get(j));
+                    x.set(x.size() - 1, collectionList.get(i));
+                    collectionList.set(j, collectionList.get(i));
+                    collectionList.set(i, x.get(x.size() - 1));
                 }
             }
         }
-        return collection;
-    }
-    /**
-     * Метод сортирует коллекцию Person
-     *
-     * @param collection принемает коллекцию
-     * @return отсортированная коллекция
-     */
-    public List<Animal> getMySortAnimal(List<Animal> collection) {
-        List<Animal> x = new ArrayList<>();
-        for (int i = 0; i < collection.size(); i++) {
-            for (int j = collection.size()-1; j > i; j--) {
-                if (collection.get(i).getAge() > collection.get(j).getAge()) {
-                    x.add(collection.get(j));
-                    x.set(x.size()-1,collection.get(i));
-                    collection.set(j, collection.get(i));
-                    collection.set(i, x.get(x.size()-1));
-                }
-            }
-        }
-        return collection;
     }
 }
