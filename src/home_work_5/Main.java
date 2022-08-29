@@ -8,13 +8,12 @@ import home_work_5.comporator.ComparatorNickPerson;
 import home_work_5.comporator.ComparatorPasswordLength;
 import home_work_5.creatCollection.CreateCollectionAnimal;
 import home_work_5.creatCollection.CreateCollectionPerson;
-import home_work_5.sort.SortCollectionPerson;
 import home_work_5.test.TestAnimal;
 import home_work_5.test.TestPerson;
 
 import java.util.*;
 
-public class Main1 {
+public class Main {
     public static void main(String[] args) {
         CreateCollectionPerson createCollectionPerson = new CreateCollectionPerson();
         CreateCollectionAnimal createCollectionAnimal = new CreateCollectionAnimal();
