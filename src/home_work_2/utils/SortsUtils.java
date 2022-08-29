@@ -1,11 +1,6 @@
 package home_work_2.utils;
 
-import home_work_2.utils.ArrayUtils;
-
 public class SortsUtils {
-    public static void main(String[] args) {
-    }
-
     /**
      * Сортировка массива  при помощи алгоритма пузырьковая сортировка
      * @param arr принемает массив

@@ -6,7 +6,6 @@ import home_work_2.utils.SortsUtils;
 public class SortsMain {
     /**
      * Сортировка массива при помощи алгоритма пузырьковая сортировка и алгоритма шейкерная сортировка
-     * @param args
      */
     public static void main(String[] args) {
         int[]arrayBubble=new int[]{1,2,3,4,5,6};
