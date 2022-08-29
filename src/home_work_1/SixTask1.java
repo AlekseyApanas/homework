@@ -8,17 +8,24 @@ public class SixTask1 {
         System.out.println("Как тебя зовут");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        if (Objects.equals(name,"Вася")) {
-            System.out.println("Привет");
-            System.out.println("Я тебя так долго ждал");
-        }
-        if (Objects.equals(name,"Анастасия")) {
-            System.out.println("Я тебя так долго ждал");
-        }
-        if (Objects.equals(name,name) && !Objects.equals(name,"Вася") && !Objects.equals(name,"Анастасия")) {
-            System.out.println("Добрый день, а вы кто?");
+        System.out.println(getResult(name));
+    }
 
+    public static String getResult(String name) {
+        String line;
+        if (Objects.equals(name, "Вася")) {
+            line="Привет\nЯ тебя так долго ждал";
+            return line;
         }
+        if (Objects.equals(name, "Анастасия")) {
+            line="Я тебя так долго ждал";
+            return line;
+        }
+        if (Objects.equals(name, name) && !Objects.equals(name, "Вася") && !Objects.equals(name, "Анастасия")) {
+            line="Добрый день, а вы кто?";
+            return line;
+        }
+        return null;
     }
 }
 

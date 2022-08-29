@@ -2,94 +2,98 @@ package home_work_5;
 
 import home_work_5.classDTO.Animal;
 import home_work_5.classDTO.Person;
-import home_work_5.creatCollection.CreateArrayList;
-import home_work_5.creatCollection.CreateHashSet;
-import home_work_5.creatCollection.CreateLinkedList;
-import home_work_5.creatCollection.CreateTreeSet;
 import home_work_5.comporator.ComparatorAgeAnimal;
 import home_work_5.comporator.ComparatorNickAnimal;
 import home_work_5.comporator.ComparatorNickPerson;
 import home_work_5.comporator.ComparatorPasswordLength;
+import home_work_5.creatCollection.CreateCollectionAnimal;
+import home_work_5.creatCollection.CreateCollectionPerson;
+import home_work_5.sort.SortCollectionPerson;
+import home_work_5.test.TestAnimal;
+import home_work_5.test.TestPerson;
 
-import java.io.IOException;
 import java.util.*;
 
+public class Main1 {
+    public static void main(String[] args) {
+        CreateCollectionPerson createCollectionPerson = new CreateCollectionPerson();
+        CreateCollectionAnimal createCollectionAnimal = new CreateCollectionAnimal();
+        TestPerson testPerson = new TestPerson();
+        TestAnimal testAnimal = new TestAnimal();
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-        IteratorTime iteratorTime = new IteratorTime();
-        SortCollectionSet<Person> sortCollectionPerson = new SortCollectionSet<>();
-        SortCollectionSet<Person> sortCollectionAnimal = new SortCollectionSet<>();
-        /*  Для Person*/
-        CreateArrayList<Person> createPersonArrayList = new CreateArrayList<>();
-        List<Person> addPersonArrayList = createPersonArrayList.addPerson();
+        List<Person> personArrayList = new ArrayList<>();
+        long start1 = System.currentTimeMillis();
+        createCollectionPerson.addPerson(personArrayList);
+        long finish1 = System.currentTimeMillis();
+        System.out.println(personArrayList.size());
+        System.out.println("Операция: createCollectionPersonArrayList. Заняла " + (finish1 - start1) + " мс");
 
-        CreateLinkedList<Person> createPersonLinkedList = new CreateLinkedList<>();
-        List<Person> addPersonLinkedList = createPersonLinkedList.addPerson();
+        testPerson.personTest(personArrayList);
 
-        CreateHashSet<Person> createPersonHashSet = new CreateHashSet<>();
-        Set<Person> addPersonHashSet = createPersonHashSet.addPerson();
+        List<Person> personLinkedList = new LinkedList<>();
+        long start2 = System.currentTimeMillis();
+        createCollectionPerson.addPerson(personLinkedList);
+        long finish2 = System.currentTimeMillis();
+        System.out.println(personLinkedList.size());
+        System.out.println("Операция: createCollectionPersonLinkerList. Заняла " + (finish2 - start2) + " мс");
 
-        CreateTreeSet<Person> createPersonTreeSet = new CreateTreeSet<>();
-        Set<Person> addPersonTreeSet = createPersonTreeSet.addPerson();
+        testPerson.personTest(personLinkedList);
 
-        addPersonArrayList.sort(new ComparatorPasswordLength());
-        addPersonLinkedList.sort(new ComparatorPasswordLength());
-        sortCollectionPerson.getPersonSortHashSetAndTreeSet(addPersonHashSet);
-        sortCollectionPerson.getPersonSortHashSetAndTreeSet(addPersonTreeSet);
+        Set<Person> personHashSet = new HashSet<>();
+        long start3 = System.currentTimeMillis();
+        createCollectionPerson.addPerson(personHashSet);
+        long finish3 = System.currentTimeMillis();
+        System.out.println(personHashSet.size());
+        System.out.println("Операция: createCollectionPersonHashSet. Заняла " + (finish3 - start3) + " мс");
 
-        iteratorTime.iteratorTimeList(addPersonArrayList);
-        iteratorTime.iteratorTimeList(addPersonLinkedList);
-        iteratorTime.iteratorTimeSet(addPersonHashSet);
-        iteratorTime.iteratorTimeSet(addPersonTreeSet);
+        testPerson.personTest(personHashSet);
 
-        iteratorTime.TimeListFor(addPersonArrayList);
-        iteratorTime.TimeListFor(addPersonLinkedList);
-        iteratorTime.TimeSetFor(addPersonHashSet);
-        iteratorTime.TimeSetFor(addPersonTreeSet);
+        Set<Person> personTreeSet = new TreeSet<>(new ComparatorPasswordLength());
+        long start4 = System.currentTimeMillis();
+        createCollectionPerson.addPerson(personTreeSet);
+        long finish4 = System.currentTimeMillis();
+        System.out.println(personTreeSet.size());
+        System.out.println("Операция: createCollectionPersonTreeSet. Заняла " + (finish4 - start4) + " мс");
 
-        iteratorTime.iteratorDelList(addPersonArrayList);
-        iteratorTime.iteratorDelList(addPersonLinkedList);
-        iteratorTime.iteratorDelSet(addPersonHashSet);
-        iteratorTime.iteratorDelSet(addPersonTreeSet);
-        /*  Для Animal*/
-        CreateArrayList<Animal> createAnimalArrayList = new CreateArrayList<>();
-        List<Animal> addAnimalArrayList = createAnimalArrayList.addAnimal();
+        testPerson.personTest(personTreeSet);
 
-        CreateLinkedList<Animal> createAnimalLinkedList = new CreateLinkedList<>();
-        List<Animal> addAnimalLinkedList = createAnimalLinkedList.addAnimal();
+        List<Animal> animalArrayList = new ArrayList<>();
+        long start5 = System.currentTimeMillis();
+        createCollectionAnimal.addAnimal(animalArrayList);
+        long finish5 = System.currentTimeMillis();
+        System.out.println(animalArrayList.size());
+        System.out.println("Операция: createCollectionAnimalArrayList. Заняла " + (finish5 - start5) + " мс");
 
-        CreateHashSet<Animal> createAnimalHashSet = new CreateHashSet<>();
-        Set<Animal> addAnimalHashSet = createAnimalHashSet.addAnimal();
+        testAnimal.animalTest(animalArrayList);
 
-        CreateTreeSet<Animal> createAnimalTreeSet = new CreateTreeSet<>();
-        Set<Animal> addAnimalTreeSet = createAnimalTreeSet.addAnimal();
+        List<Animal> animalLinkedList = new LinkedList<>();
+        long start6 = System.currentTimeMillis();
+        createCollectionAnimal.addAnimal(animalLinkedList);
+        long finish6 = System.currentTimeMillis();
+        System.out.println(animalLinkedList.size());
+        System.out.println("Операция: createCollectionAnimalLinkedList. Заняла " + (finish6 - start6) + " мс");
 
-        addAnimalArrayList.sort(new ComparatorAgeAnimal());
-        addAnimalLinkedList.sort(new ComparatorAgeAnimal());
-        sortCollectionAnimal.getAnimalSortHashSetAndTreeSet(addPersonHashSet);
-        sortCollectionAnimal.getAnimalSortHashSetAndTreeSet(addPersonTreeSet);
+        testAnimal.animalTest(animalLinkedList);
 
-        iteratorTime.iteratorTimeList(addAnimalArrayList);
-        iteratorTime.iteratorTimeList(addAnimalLinkedList);
-        iteratorTime.iteratorTimeSet(addAnimalHashSet);
-        iteratorTime.iteratorTimeSet(addAnimalTreeSet);
+        Set<Animal> animalHashSet = new HashSet<>();
+        long start7 = System.currentTimeMillis();
+        createCollectionAnimal.addAnimal(animalHashSet);
+        long finish7 = System.currentTimeMillis();
+        System.out.println(animalHashSet.size());
+        System.out.println("Операция: createCollectionAnimalHashSet. Заняла " + (finish7 - start7) + " мс");
 
-        iteratorTime.TimeListFor(addAnimalArrayList);
-        iteratorTime.TimeListFor(addAnimalLinkedList);
-        iteratorTime.TimeSetFor(addAnimalHashSet);
-        iteratorTime.TimeSetFor(addAnimalTreeSet);
+        testAnimal.animalTest(animalHashSet);
 
-        iteratorTime.iteratorDelList(addAnimalArrayList);
-        iteratorTime.iteratorDelList(addAnimalLinkedList);
-        iteratorTime.iteratorDelSet(addAnimalHashSet);
-        iteratorTime.iteratorDelSet(addAnimalTreeSet);
+        Set<Animal> animalTreeSet = new TreeSet<>(new ComparatorAgeAnimal());
+        long start8 = System.currentTimeMillis();
+        createCollectionAnimal.addAnimal(animalTreeSet);
+        long finish8 = System.currentTimeMillis();
+        System.out.println(animalTreeSet.size());
+        System.out.println("Операция: createCollectionAnimalTreeSet. Заняла " + (finish8 - start8) + " мс");
+
+        testAnimal.animalTest(animalTreeSet);
         /* Двойная сортировка*/
         Comparator<Person> comparatorPasswordLengthAndNick = new ComparatorPasswordLength().thenComparing(new ComparatorNickPerson());
         Comparator<Animal> comparatorAgeAndNick = new ComparatorAgeAnimal().thenComparing(new ComparatorNickAnimal());
-        /*Моя сортировка*/
-        System.out.println(sortCollectionPerson.getMySortPerson(addPersonArrayList));
-        System.out.println(sortCollectionPerson.getMySortAnimal(addAnimalArrayList));
     }
 }
-

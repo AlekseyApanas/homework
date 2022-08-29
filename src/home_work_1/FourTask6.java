@@ -8,13 +8,17 @@ public class FourTask6 {
         Scanner scanner = new Scanner(System.in);
         int numberAge = scanner.nextInt();
         int daysOfAge;
-        if (((numberAge % 4 == 0)&&(numberAge%100!=0))||(numberAge%400==0)){
+        if (getYears(numberAge)) {
             daysOfAge = 366;
             System.out.println(daysOfAge);
-        }else {
-            daysOfAge=365;
+        } else {
+            daysOfAge = 365;
             System.out.println(daysOfAge);
         }
-        System.out.println();
+    }
+
+    public static boolean getYears(int numberAge) {
+        return ((numberAge % 4 == 0) && (numberAge % 100 != 0)) || (numberAge % 400 == 0);
+
     }
 }

@@ -8,12 +8,13 @@ public class FourTask3 {
         Scanner scanner = new Scanner(System.in);
         int numberOne = scanner.nextInt();
         int numberTwo = scanner.nextInt();
-        if(numberOne%numberTwo==0){
-            int result=numberOne/numberTwo;
-            System.out.println("Number to divide without remainder = "+result);
+        if(getResult(numberOne,numberTwo)){
+            System.out.println("Number to divide without remainder = "+numberOne/numberTwo);
         }else{
-            float remainder=(float) numberOne/numberTwo;
-            System.out.println("remainder = "+remainder);
+            System.out.println("remainder = "+(float)numberOne/numberTwo);
         }
+    }
+public static boolean getResult(int numberOne,int numberTwo){
+    return numberOne % numberTwo == 0;
     }
 }

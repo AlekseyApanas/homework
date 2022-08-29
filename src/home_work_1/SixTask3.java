@@ -1,5 +1,4 @@
 package home_work_1;
-
 import java.util.Scanner;
 
 public class SixTask3 {
@@ -7,17 +6,21 @@ public class SixTask3 {
         System.out.println("Как тебя зовут");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
+        System.out.println(getResult(name));
+    }
+
+    public static String getResult(String name) {
+        String line;
         switch (name) {
             case ("Вася"):
-                System.out.println("Привет");
-                System.out.println("Я тебя так долго ждал");
-                break;
+                line = "Привет\nЯ тебя так долго ждал";
+                return line;
             case ("Анастасия"):
-                System.out.println("Я тебя так долго ждал");
-                break;
+                line = "Я тебя так долго ждал";
+                return line;
             default:
-                System.out.println("Добрый день, а вы кто?");
-                break;
+                line = "Добрый день, а вы кто?";
+                return line;
         }
     }
 }
