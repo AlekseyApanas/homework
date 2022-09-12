@@ -1,0 +1,11 @@
+Задание 2.1- классы WorkWithText,Main;
+Задание 2.2- классы WorkWithText,Main,ComparatorMap;
+Задание 3- ISearchEngine;
+Задание 3.1 - интерфейс IEasySearch
+Задание 4.1 - класс EasySearch
+Задание 4.2 - класс RegExSearch
+Задание 4.3 - класс SearchEnginePunctuationNormalizer
+Задание 4.4 - класс SearchRegisterIgnore
+Задание 4.5 - класс SearchEngineCaseNormalizerDecorator
+Задание 5 - в Main
+Задание 6 -  в test/home_work_6/ISearchEngineTest
