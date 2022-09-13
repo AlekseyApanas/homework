@@ -9,18 +9,19 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task2 {
-
-    public File classWorkFile() {
+    public void writeOrRead() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите путь к файлу");
         String userFile = scan.nextLine();
         File file = new File(userFile);
         if (file.exists() && file.isDirectory()) {
-
+            intPutFile(file);
         } else {
-            file = new File("students.bin");
+           file = new File("students.bin");
+            outPutFile(collectionStudent(), file);
+            intPutFile(file);
+
         }
-        return file;
     }
 
     public File outPutFile(Collection<Student> studentCollection, File file) {
