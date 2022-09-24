@@ -7,8 +7,6 @@ import home_work_6.search.EasySearch;
 import home_work_6.search.RegExSearch;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ISearchEngineTest {
     @Test
     public void test1() {
