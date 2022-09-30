@@ -1,7 +1,7 @@
-package home_work_6.decorator;
+package home_work_7.decorator;
 
-import home_work_6.ISearchEngine;
-import home_work_6.WorkWithText;
+import home_work_7.ISearchEngine;
+import home_work_7.WorkWithText;
 
 public class SearchEngineCaseNormalizerDecorator implements ISearchEngine {
     private final ISearchEngine searchEngine;

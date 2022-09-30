@@ -1,8 +1,8 @@
-package home_work_6.paragraph_7;
+package home_work_7.paragraph_7;
 
-import home_work_6.ISearchEngine;
-import home_work_6.WorkWithText;
-import home_work_6.search.EasySearch;
+import home_work_7.ISearchEngine;
+import home_work_7.WorkWithText;
+import home_work_7.search.EasySearch;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ public class Search {
     /*homework/src/home_work_7/paragraph_7/book*/
 
     /**
-     * Выполниет работу с user
+     * Данный метод выполниет работу с user
      */
     public void work() {
         searchFolder();
@@ -52,7 +52,7 @@ public class Search {
     }
 
     /**
-     * Ищет папку
+     * Данный метод производит поиск директории
      */
 
     private void searchFolder() {
@@ -74,7 +74,7 @@ public class Search {
     }
 
     /**
-     * Ищет файл
+     * Данный метод производит поиск введенного пользователем файла
      */
     private void searchFile() {
         boolean searchFile = true;
@@ -91,7 +91,7 @@ public class Search {
     }
 
     /**
-     * Ищет слово
+     * Данный метод производит поиск введенного пользователем слова в файле
      */
     private void searchWord() {
         System.out.println("Введите слово");

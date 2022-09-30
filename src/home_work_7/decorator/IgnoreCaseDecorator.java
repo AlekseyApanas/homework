@@ -1,9 +1,9 @@
-package home_work_6.decorator;
+package home_work_7.decorator;
 
 
-import home_work_6.ISearchEngine;
-import home_work_6.WorkWithText;
-import home_work_6.search.EasySearch;
+import home_work_7.ISearchEngine;
+import home_work_7.WorkWithText;
+import home_work_7.search.EasySearch;
 
 public class IgnoreCaseDecorator implements ISearchEngine {
     private ISearchEngine searchEngine;
