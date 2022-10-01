@@ -1,11 +1,13 @@
-package home_work_6;
+package home_work_7;
 
-import home_work_6.decorator.IgnoreCaseDecorator;
-import home_work_6.decorator.SearchEngineCaseNormalizerDecorator;
-import home_work_6.decorator.SearchEnginePunctuationNormalizerDecorator;
-import home_work_6.search.EasySearch;
-import home_work_6.search.RegExSearch;
+import home_work_7.decorator.IgnoreCaseDecorator;
+import home_work_7.decorator.SearchEngineCaseNormalizerDecorator;
+import home_work_7.decorator.SearchEnginePunctuationNormalizerDecorator;
+import home_work_7.search.EasySearch;
+import home_work_7.search.RegExSearch;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ISearchEngineTest {
     @Test
