@@ -1,61 +1,33 @@
 package home_work_7.paragraph_8;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class SearchParagraph8 {
-    private final Scanner scanner = new Scanner(System.in);
-    private String folderName;
-
-    /*homework/src/home_work_7/paragraph_7/book*/
-
-    /**
-     * Данный метод выполниет работу с user
-     */
-    public void work() {
-        boolean proceedSearchWord = true;
-        List<String> list = searchFolder();
-        searchWord(list);
-        while (proceedSearchWord) {
-            System.out.println("Искать другое слово?1-Да,2-Нет");
-            String searchWordScanner = this.scanner.nextLine();
-            if (searchWordScanner.equals("1")) {
-                searchWord(list);
-            } else if (searchWordScanner.equals("2")) {
-                proceedSearchWord = false;
-            }
-        }
-        try {
-            String book = Files.readString(Path.of("homework/src/home_work_7/paragraph_8" + "/" + "result.txt"));
-            System.out.println(book);
-        } catch (
-                IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     /**
      * Данный метод производит поиск директории
+     *
+     * @param folderName название директории
+     * @return список файлов
      */
-
-    private List<String> searchFolder() {
+   public List<String> searchFolder(String folderName) {
         boolean folder = true;
-        List<String> list = new ArrayList<>();
+        List<String> list = null;
         while (folder) {
-            System.out.println("Введите адрес папки");
-            this.folderName = this.scanner.nextLine();
-            File file = new File(this.folderName);
+            File file = new File(folderName);
             if (!file.exists()) {
                 System.out.println("Папка не найдена");
+                break;
             } else {
                 folder = false;
                 String[] fileString = file.list();
                 for (String s : Objects.requireNonNull(fileString)) {
                     System.out.println(s);
+                    list = new ArrayList<>();
                     list.add(s);
                 }
             }
@@ -65,13 +37,16 @@ public class SearchParagraph8 {
 
     /**
      * Данный метод создаёт поток
+     *
+     * @param list                    список файлов
+     * @param folderName              путь к папке с файлами
+     * @param word                    слово для поиска
+     * @param folderNameForSaveResult папка для сохранения результата
      */
-    private void searchWord(List<String> list) {
-        System.out.println("Введите слово");
-        String word = this.scanner.nextLine();
+    public void searchWord(List<String> list, String folderName, String word, String folderNameForSaveResult) {
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         for (String s : list) {
-            executorService.submit(new MyThread(s, folderName, word));
+            executorService.submit(new WorkWithThread(s, folderName, word, folderNameForSaveResult));
         }
         executorService.shutdown();
     }

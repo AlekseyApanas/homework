@@ -4,113 +4,82 @@ import home_work_7.ISearchEngine;
 import home_work_7.WorkWithText;
 import home_work_7.search.EasySearch;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import java.util.Objects;
 
 public class Search {
-    private final Scanner scanner = new Scanner(System.in);
-    private String folderName;
-    private String fileName;
-
-    /*homework/src/home_work_7/paragraph_7/book*/
-
-    /**
-     * Данный метод выполниет работу с user
-     */
-    public void work() {
-        searchFolder();
-        boolean proceedSearchFile = true;
-        searchFile();
-        while (proceedSearchFile) {
-            boolean proceedSearchWord = true;
-            searchWord();
-            while (proceedSearchWord) {
-                System.out.println("Искать другое слово?1-Да,2-Нет");
-                String searchWordScanner = this.scanner.nextLine();
-                if (searchWordScanner.equals("1")) {
-                    searchWord();
-                } else if(searchWordScanner.equals("2")) {
-                    proceedSearchWord = false;
-                }
-            }
-            System.out.println("Искать другой файл?1-Да,2-Нет");
-            String searchWordScanner = this.scanner.nextLine();
-            if (searchWordScanner.equals("1")) {
-                searchFile();
-            } else if(searchWordScanner.equals("2")){
-                proceedSearchFile = false;
-            }
-        }
-        try {
-            String book = Files.readString(Path.of(this.folderName + "/" + "result.txt"));
-            System.out.println(book);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     /**
      * Данный метод производит поиск директории
+     *
+     * @param folderName путь к папке с файлами
+     * @return true- папка не найдена,false- папка найдена
      */
 
-    private void searchFolder() {
+    public boolean searchFolder(String folderName) {
         boolean folder = true;
         while (folder) {
-            System.out.println("Введите адрес папки");
-            this.folderName = this.scanner.nextLine();
-            File file = new File(this.folderName);
+            File file = new File(folderName);
             if (!file.exists()) {
                 System.out.println("Папка не найдена");
+                break;
             } else {
                 folder = false;
-               String[]fileString= file.list();
+                String[] fileString = file.list();
                 for (String s : Objects.requireNonNull(fileString)) {
                     System.out.println(s);
                 }
             }
         }
+        return folder;
     }
 
     /**
      * Данный метод производит поиск введенного пользователем файла
+     *
+     * @param folderName путь к папке с файлами
+     * @param fileName   имя файла
+     * @return true- файл не найден,false- файл найден
      */
-    private void searchFile() {
+    public boolean searchFile(String folderName, String fileName) {
         boolean searchFile = true;
         while (searchFile) {
-            System.out.println("Введите название книги");
-            this.fileName = this.scanner.nextLine();
-            File file = new File(this.folderName + "/" + this.fileName);
+            File file = new File(folderName + "/" + fileName);
             if (file.exists()) {
                 searchFile = false;
             } else {
                 System.out.println("Книга не найден");
+                break;
             }
         }
+        return searchFile;
     }
 
     /**
-     * Данный метод производит поиск введенного пользователем слова в файле
+     * Данный метод производит поиск введенного пользователем слова в файле и записывает в новый файл
+     *
+     * @param word                    слово для поиска
+     * @param folderName              путь к папке с файлами
+     * @param fileName                имя файла
+     * @param folderNameForSaveResult папка для сохранения результата
      */
-    private void searchWord() {
-        System.out.println("Введите слово");
-        String word = this.scanner.nextLine();
+   public void searchWord(String word, String folderName, String fileName, String folderNameForSaveResult) {
         ISearchEngine easySearch = new EasySearch();
-        String cont = String.valueOf(easySearch.search(WorkWithText.getString(this.folderName + "/" + this.fileName), word));
+        String cont = String.valueOf(easySearch.search(WorkWithText.getString(folderName + "/" + fileName), word));
         System.out.println(cont);
-        File file = new File(this.folderName + "/" + "result.txt");
+        File file = new File(folderNameForSaveResult + "/" + "result.txt");
         if (file.exists()) {
             try (FileWriter fileWriter = new FileWriter(file, true)) {
-                fileWriter.append(this.fileName).append(" - ").append(word).append(" - ").append(cont);
+                fileWriter.append(fileName).append(" - ").append(word).append(" - ").append(cont);
                 fileWriter.append(System.lineSeparator());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } else {
             try (FileWriter fileWriter = new FileWriter(file, true)) {
-                file.createNewFile();
-                fileWriter.write(this.fileName + " - " + word + " - " + cont);
+                fileWriter.write(fileName + " - " + word + " - " + cont);
                 fileWriter.append(System.lineSeparator());
             } catch (IOException e) {
                 throw new RuntimeException(e);
