@@ -44,7 +44,7 @@ public class NewMain {
      * @param folderNameForSaveResult путь к папке result.txt
      * @return строку result.txt
      */
-    static String readBook(String folderNameForSaveResult) {
+   public static String readBook(String folderNameForSaveResult) {
         String book;
         try {
             book = Files.readString(Path.of(folderNameForSaveResult + "/" + "result.txt"));

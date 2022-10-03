@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class SearchParagraph8 {
     /**
@@ -14,7 +15,7 @@ public class SearchParagraph8 {
      * @param folderName название директории
      * @return список файлов
      */
-   public List<String> searchFolder(String folderName) {
+    public List<String> searchFolder(String folderName) {
         boolean folder = true;
         List<String> list = null;
         while (folder) {
@@ -25,9 +26,9 @@ public class SearchParagraph8 {
             } else {
                 folder = false;
                 String[] fileString = file.list();
+                list = new ArrayList<>();
                 for (String s : Objects.requireNonNull(fileString)) {
                     System.out.println(s);
-                    list = new ArrayList<>();
                     list.add(s);
                 }
             }
@@ -49,5 +50,14 @@ public class SearchParagraph8 {
             executorService.submit(new WorkWithThread(s, folderName, word, folderNameForSaveResult));
         }
         executorService.shutdown();
+        boolean done = false;
+        try {
+            while (!done) {
+                done = executorService.awaitTermination(1, TimeUnit.MINUTES);
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
